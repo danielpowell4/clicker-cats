@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+  <title>Cat Clicker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <style>
+
+    html {
+      background-color: #f1efed;
+    }
+
+    body {
+      padding: 32px;
+    }
+
+
+    h1 {
+      margin: 10vh 0 1vh 0;
+      text-align: center;
+      font-family: "alternate-gothic-no-3-d";
+      font-size: 3.4em;
+    }
+
+    h4 {
+      text-align: center;
+      color: #777;
+      font-size: 1.4em;
+      font-family:  "proxima-nova-soft";
+    }
+
+    #cat-container {
+      width: 32vw;
+      height: 24vw;
+      margin: 0 auto;
+    }
+
+    #cat-img {
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1 id="cat-count">CAT CLICKER</h1>
+  <div id="cat-container"><img id="cat-img" src="img/cat-1.jpeg"></div>
+  <h4 id="cat-name">click the cat and a new cat will appear</h4>
+
+
+<!-- jQuery to the rescue -->
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<!-- TypeKit fonts -->
+<script src="https://use.typekit.net/cxb7efi.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<script>
+
+//DOM Elements
+var $catContainer = $('#cat-container');
+var $catImg = $('#cat-img');
+var $catCount = $('#cat-count');
+var $catName = $('#cat-name');
+
+// Counters
+var clickCount = 0;
+
+// Other global variables
+var catNameArray = ["Beacon", "Jeremy", "Steve", "Blake", "Cassie", "Charlie", "Alex", "Amanda", "Jessica", "Sue", "Julia"];
+
+$catContainer.click(function(){
+    var randomNum = (Math.floor(Math.random() * 10) + 1);
+    var newCat = 'img/cat-' + randomNum + '.jpeg';
+    $catImg.attr('src', newCat);
+    clickCount ++;
+    $catCount.text("YOU'VE CLICKED ON " + clickCount + " CATS");
+    $catName.text('My name is ' + catNameArray[randomNum]);
+    return null;
+});
+
+</script>
+</body>
