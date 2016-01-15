@@ -82,7 +82,7 @@ $catContainer.click(function(){
     var randomNum = (Math.floor(Math.random() * 10) + 1);
     var newCat = 'img/cat-' + randomNum + '.jpeg';
     $catImg.attr('src', newCat);
-    clickCount =-;
+    clickCount --;
     $catCount.text("YOU'VE CLICKED ON " + clickCount + " CATS");
     $catName.text('My name is ' + catNameArray[randomNum]);
     return null;
