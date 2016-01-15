@@ -94,6 +94,7 @@ $catContainer.click(function(){
     $catImg.attr('src', newCat);
     clickCount ++;
     headlineCount --;
+    $headline.text(headlineCount);
     $catCount.text("YOU'VE CLICKED ON " + clickCount + " CATS");
     $catName.text('My name is ' + catNameArray[randomNum]);
     return null;
