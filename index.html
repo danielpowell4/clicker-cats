@@ -72,7 +72,7 @@ var $catCount = $('#cat-count');
 var $catName = $('#cat-name');
 
 // Counters
-var clickCount = 0;
+var clickCount = 404;
 
 // Cat name array
 var catNameArray = ["Beacon", "Courtney", "Steve", "Blake", "Cassie", "Charlie", "Alex", "Amanda", "Jessica", "Sue", "Chelsea"];
@@ -82,7 +82,7 @@ $catContainer.click(function(){
     var randomNum = (Math.floor(Math.random() * 10) + 1);
     var newCat = 'img/cat-' + randomNum + '.jpeg';
     $catImg.attr('src', newCat);
-    clickCount ++;
+    clickCount =-;
     $catCount.text("YOU'VE CLICKED ON " + clickCount + " CATS");
     $catName.text('My name is ' + catNameArray[randomNum]);
     return null;
