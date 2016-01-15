@@ -46,11 +46,16 @@
       border-radius: 8px;
     }
 
+    #headline h1{
+      font-size: 7em;
+    }
+
   </style>
 </head>
 
 <body>
-  <h1 id="cat-count">CAT CLICKER</h1>
+  <h1 id="headline"></h1>
+  <h1 id="cat-count">YOU NEED A BREAK ANYWAY</h1>
   <h4 id="cat-name">click the cat and a new cat will appear</h4>
   <div id="cat-container"><img id="cat-img" src="img/cat-7.jpeg"></div>
 
@@ -70,9 +75,14 @@ var $catContainer = $('#cat-container');
 var $catImg = $('#cat-img');
 var $catCount = $('#cat-count');
 var $catName = $('#cat-name');
+var $headline = $('#headline');
 
 // Counters
-var clickCount = 404;
+var clickCount = 0;
+var headlineCount = 404;
+
+// Add headline Count to DOM
+$headline.text(headlineCount);
 
 // Cat name array
 var catNameArray = ["Beacon", "Courtney", "Steve", "Blake", "Cassie", "Charlie", "Alex", "Amanda", "Jessica", "Sue", "Chelsea"];
@@ -82,7 +92,8 @@ $catContainer.click(function(){
     var randomNum = (Math.floor(Math.random() * 10) + 1);
     var newCat = 'img/cat-' + randomNum + '.jpeg';
     $catImg.attr('src', newCat);
-    clickCount --;
+    clickCount ++;
+    headlineCount --;
     $catCount.text("YOU'VE CLICKED ON " + clickCount + " CATS");
     $catName.text('My name is ' + catNameArray[randomNum]);
     return null;
