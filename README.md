@@ -1,6 +1,6 @@
 # clicker-cats
 
-This simple 404 cat clicker concept page changes out the cat picture and name each time you click on a cat.
+simple 404 page that changes with each click
 
 ## What happens when you reach 0?
 
